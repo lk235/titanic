@@ -10,6 +10,8 @@ turnstile_filename = "C:/Users/lk235/Desktop/titago/titanic/turnstile-110528.txt
 solution_turnstile_filename = "C:/Users/lk235/Desktop/titago/titanic/solution_turnstile-110528.txt"
 file1 = "C:/Users/lk235/Desktop/titago/7.2/new tables/FORMA_ITALIA.csv"
 file2 = "C:/Users/lk235/Desktop/titago/7.2/new tables/ingromaket07.csv"
+file_xlsx = "C:/Users/lk235/Desktop/titago/7.2/new tables/FORMA_ITALIA.xlsx"
+
 out_put = "C:/Users/lk235/Desktop/titago/7.2/new tables/output.csv"
 
 
@@ -68,7 +70,11 @@ def filter_by_regular(filename,col_name,col_value):
     file_df = pd.read_csv(filename)
     return file_df[file_df[col_name] == col_value]
 
-print filter_by_regular(file1,'Barcode','8000162003064')
+def filter_by_value_xlsx(filename,col_name,col_value):
+    file_df = pd.read_excel(filename)
+    return file_df[file_df[col_name] == col_value]
+
+print filter_by_value_xlsx(file_xlsx,'Barcode','8000162003064')
 
 
 
